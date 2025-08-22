@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 
 import markdoc from "@astrojs/markdoc";
 
+import turbolinks from "@astrojs/turbolinks";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://christoph.luppri.ch",
@@ -13,5 +15,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [sitemap(), markdoc()],
+  integrations: [sitemap(), markdoc(), turbolinks()],
 });
