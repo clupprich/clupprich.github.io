@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import "@fontsource-variable/inter";
 
+import { SEO } from "astro-seo";
+
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 ---
@@ -12,11 +14,22 @@ import Footer from "./Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Senior Software Engineer | Ruby on Rails Expert | Building Maintainable Systems" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>Christoph Lupprich</title>
+
+    <SEO
+      title="Christoph Lupprich"
+      description="Senior Software Engineer | Ruby on Rails Expert | Building Maintainable Systems"
+      openGraph={{
+        basic: {
+          title: "Christoph Lupprich",
+          type: "website",
+          image: "https://christoph.luppri.ch/christoph_lupprich.png",
+        }
+      }}
+    />
   </head>
   <body class="dark:bg-gray-800 h-full">
     <div class="min-h-full flex flex-col items-stretch">
