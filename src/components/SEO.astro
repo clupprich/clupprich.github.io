@@ -1,0 +1,46 @@
+---
+const {
+  title,
+  description,
+  ogImage,
+  canonical,
+  noindex,
+  structuredData
+} = Astro.props;
+---
+
+<head>
+  <title>{title}</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+
+  <meta name="description" content={description} />
+  {canonical && <link rel="canonical" href={canonical} />}
+  {noindex && <meta name="robots" content="noindex" />}
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@clupprich" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon and Sitemap -->
+  <link rel="icon" href="/favicon.png" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+
+  <!-- Structured Data -->
+  {structuredData && (
+    <script type="application/ld+json">
+      {JSON.stringify(structuredData)}
+    </script>
+  )}
+</head>
