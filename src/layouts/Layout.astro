@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import "@fontsource-variable/inter";
 
-import SEO from "../components/SEO.astro"
+import SEO from "../components/SEO.astro";
 const { frontmatter } = Astro.props;
 
 import Header from "./Header.astro";
@@ -17,16 +17,13 @@ import Footer from "./Footer.astro";
     <div class="min-h-full flex flex-col items-stretch">
       <Header />
 
-      <main
-        class="flex-grow flex-shrink-0 px-4 md:px-16 md:max-w-3xl lg:max-w-4xl lg:mx-auto"
-      >
-        <slot />
-      </main>
+      <slot />
 
       <Footer />
     </div>
 
     <!-- 100% privacy-first analytics -->
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
   </body>
 </html>
