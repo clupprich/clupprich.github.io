@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import headshot from "../assets/christoph_lupprich.png";
+---
+
+<Layout
+  frontmatter={{
+    title: "Christoph Lupprich",
+    description:
+      "Christoph Lupprich is a senior software engineer, specialising on web application development with Ruby on Rails.",
+    ogImage: "/christoph_lupprich.png",
+  }}
+>
+  <main class="flex-grow flex-shrink-0 px-4 md:px-16 md:max-w-3xl lg:max-w-4xl">
+    <article class="prose dark:prose-invert xl:max-w-3xl">
+      <h1>Imprint</h1>
+
+      <p>
+        <b>Website Owner</b><br />
+        Christoph Lupprich
+      </p>
+      <p>
+        <b>Address</b><br />
+        Alsegger Straße 53/3<br />
+        1180 Vienna<br />
+        Austria
+      </p>
+
+      <p>
+        <b>VAT Identification Number</b><br />
+        ATU69545058
+      </p>
+
+      <p>
+        <b>Gewerbewortlaut (Business Description)</b>
+        Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik<br />
+        (Services in automatic data processing and information technology)
+      </p>
+      <p>
+        <b>Behörde gem. ECG (Authority according to ECG)</b>
+        Magistrat der Stadt Wien
+      </p>
+    </article>
+  </main>
+</Layout>
