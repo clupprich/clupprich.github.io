@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import headshot from "../assets/christoph_lupprich.png";
 ---
 
 <Layout
@@ -12,8 +10,10 @@ import headshot from "../assets/christoph_lupprich.png";
     ogImage: "/christoph_lupprich.png",
   }}
 >
-  <main class="flex-shrink-0 flex-grow px-4 md:max-w-3xl md:px-16 lg:max-w-4xl">
-    <article class="prose dark:prose-invert xl:max-w-3xl">
+  <main
+    class="flex-shrink-0 flex-grow px-6 md:max-w-3xl md:px-12 lg:mx-auto lg:max-w-4xl"
+  >
+    <article class="prose dark:prose-invert !max-w-none">
       <h1>Imprint</h1>
 
       <p>
@@ -33,13 +33,13 @@ import headshot from "../assets/christoph_lupprich.png";
       </p>
 
       <p>
-        <b>Gewerbewortlaut (Business Description)</b>
+        <b>Gewerbewortlaut (Business Description)</b><br />
         Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik<br
         />
         (Services in automatic data processing and information technology)
       </p>
       <p>
-        <b>Behörde gem. ECG (Authority according to ECG)</b>
+        <b>Behörde gem. ECG (Authority according to ECG)</b><br />
         Magistrat der Stadt Wien
       </p>
     </article>
