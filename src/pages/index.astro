@@ -2,6 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import headshot from "../assets/christoph_lupprich.png";
+
+import { getCollection } from "astro:content";
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <Layout
@@ -72,7 +77,7 @@ import headshot from "../assets/christoph_lupprich.png";
           <li>
             <a href="https://easyhard.carbonative.com" target="_blank"
               >Easy &amp; Hard</a
-            > - helps you track your running intensity and master the 80/20 rule.
+            > - track your running intensity and master the 80/20 rule.
           </li>
         </ul>
       </div>
@@ -102,6 +107,25 @@ import headshot from "../assets/christoph_lupprich.png";
           the last couple of years: <a href="https://fritzgrabo.com">Fritz</a> and
           <a href="https://wolfgangrittner.dev">Wolfgang</a>. Together we will
           tackle the most challenging projects.
+        </p>
+      </div>
+
+      <div class="mt-16">
+        <span class="font-bold">Writing</span>
+        <p>
+          <ul>
+            {
+              posts.map((post) => (
+                <li>
+                  <>
+                    <a href={`/posts/${post.id}`}>{post.data.title}</a>
+                    <br />
+                  </>
+                  {post.data.excerpt}
+                </li>
+              ))
+            }
+          </ul>
         </p>
       </div>
 
