@@ -6,7 +6,7 @@ slug: postgres-sequence-replaced-redis-locks
 excerpt: "When Redis locks started deadlocking at scale, I found a simpler solution: let Postgres handle it. Here's how a database sequence eliminated our distributed locking issues and delivered sub-millisecond performance."
 ---
 
-Imagine a warehouse processing over 90 million returned products every year. Each item needs a unique identifier - a "license plate" or LP - so it can be tracked through the returns process. Warehouse staff need these labels quickly: either pre-printed on rolls of stickers, or printed on-demand as items arrive.
+Imagine a warehouse processing over 90 million returned products every year. Each item needs a unique identifier, a "license plate" or LP, so it can be tracked through the returns process. Warehouse staff need these labels quickly: either pre-printed on rolls of stickers, or printed on-demand as items arrive.
 
 When you're generating millions of unique identifiers, you need two things: speed and reliability. You can't accidentally give two items the same ID, and you can't make warehouse staff wait. Our initial solution worked, but it had a hidden weakness that would eventually cause problems at scale.
 
