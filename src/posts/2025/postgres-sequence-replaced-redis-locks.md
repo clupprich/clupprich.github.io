@@ -2,7 +2,7 @@
 ---
 title: How a Postgres Sequence Replaced Redis Locks at 90M+ Units/Year
 pubDate: 2026-01-11
-slug: scaling-beyond-90m-units-anually
+slug: postgres-sequence-replaced-redis-locks
 excerpt: "When Redis locks started deadlocking at scale, I found a simpler solution: let Postgres handle it. Here's how a database sequence eliminated our distributed locking issues and delivered sub-millisecond performance."
 ---
 
