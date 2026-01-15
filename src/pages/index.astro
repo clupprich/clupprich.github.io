@@ -118,7 +118,7 @@ const posts = (await getCollection("posts")).sort(
               posts.map((post) => (
                 <li>
                   <>
-                    <a href={`/posts/${post.id}`}>{post.data.title}</a>
+                    <a href={`/posts/${post.id}/`}>{post.data.title}</a>
                     <br />
                   </>
                   {post.data.excerpt}
